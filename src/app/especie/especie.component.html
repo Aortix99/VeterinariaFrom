@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es-CO" class="html">
+<head >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <div class="titulo"> <title>VETERINARIA</title></div>
+
+</head>
+
+<body class="body">
+
+  <form [formGroup]="myForm" (ngSubmit)="guardar(myForm)" errorTailor>
+  <div class="modal-header">
+  <div class="t">  <h4 class="modal-title" id="modal-basic-title">Especie</h4>
+  </div>
+    <div class="Con_Imput">
+      <input type="text" placeholder="ID Persona" class="imp" id="nmcliente" formControlName="idEspecie" >
+  </div>
+  <div class="Con_Imput">
+    <input type="text" placeholder="Nombre" class="imp" id="nmcliente" formControlName="especie">
+  </div>
+  <div class="Con_Imput">
+    <button type="submit"  class="enviar" >Enviar</button>
+</div>
+  </div>
+
+</form>
+<div class="con-table">
+<table id="table"
+class="table table-bordered hover table-borderless">
+<thead>
+    <tr>
+      <th style="text-align:center">id</th>
+      <th style="text-align:center">Especie</th>
+      <th style="text-align:center">Eliminar</th>
+      <th style="text-align:center">Editar</th>
+
+
+
+  </tr>
+</thead>
+<tbody>
+  <tr style="text-align:center;"  *ngFor="let index of EspecieV " >
+
+
+      <td style="margin-top: 3%;">{{index.idEspecie}}</td>
+      <td style="margin-top: 3%;">{{index.especie}}</td>
+
+
+      <td style="margin-top: 3%;">
+
+    <button class="edit" mat-icon (click)="confirmar(index.idEspecie)">
+      <abbr title="Eliminar">
+             Eliminar
+      </abbr>
+  </button>
+
+  </td>
+  <td style="margin-top: 3%;">
+
+    <button class="edit" mat-icon (click)="editar(index)" >
+      <abbr title="Editar">
+             Editar
+      </abbr>
+  </button>
+
+  </td>
+  </tr>
+</tbody></table>
+
+</div>
+
+</body>
+
+</html>
+
+
+

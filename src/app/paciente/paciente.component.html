@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" class="html">
+<head >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <div class="titulo"> <title>VETERINARIA</title></div>
+
+</head>
+
+<body class="body">
+
+
+  <div class="header">
+
+
+  <form [formGroup]="myForm" (ngSubmit)="guardar(myForm)" errorTailor>
+    <div class="modal-header">
+    <div class="t">  <h4 class="modal-title" id="modal-basic-title">Paciente</h4>
+    </div>
+      <div class="Con_Imput">
+        <input type="text" placeholder="ID Paciente" class="imp" id="nmcliente" formControlName="idPaciente" >
+    </div>
+    <div class="Con_Imput">
+      <input type="text" placeholder="Nombre" class="imp" id="nmcliente" formControlName="nombre">
+    </div>
+    <div class="Con_Imput">
+        <input type="text" placeholder="Fecha de nacimeinto" class="imp" id="documento" formControlName="feNaMascota" >
+    </div>
+
+    <div class="Con_Imput">
+      <input type="text" placeholder="Fecha Registro" class="imp" id="nmcliente" formControlName="feRegistro" >
+  </div>
+    <div class="Con_Imput">
+      <input type="text" placeholder="IdEspecie" class="imp" id="documento" formControlName="idEspecie" >
+  </div>
+
+  <div class="Con_Imput">
+    <input type="text" placeholder="id Raza" class="imp" id="documento" formControlName="idRaza" >
+</div>
+
+    <div class="Con_Imput">
+        <button type="submit" class="Agregar" >Enviar</button>
+    </div>
+    </div>
+  </form>
+</div>
+
+<div class="con-table">
+<table id="table"
+class="table table-bordered hover table-borderless">
+
+
+<thead>
+    <tr>
+      <th style="text-align:center">Id Paciente</th>
+      <th style="text-align:center">Nombre</th>
+      <th style="text-align:center">Fecha de nacimeinto</th>
+      <th style="text-align:center">Fecha Registro</th>
+      <th style="text-align:center">IdEspecie</th>
+      <th style="text-align:center">id Raza</th>
+      <th style="text-align:center">Eliminar</th>
+      <th style="text-align:center">Editar</th>
+  </tr>
+</thead>
+<tbody>
+  <tr style="text-align:center;" *ngFor="let index of PacienteV">
+      <td style="margin-top: 3%;">{{index.idPaciente}}</td>
+      <td style="margin-top: 3%;">{{index.nombre}}</td>
+      <td style="margin-top: 3%;">{{index.feNaMascota}}</td>
+      <td style="margin-top: 3%;">{{index.feRegistro}}</td>
+      <td style="margin-top: 3%;">{{index.idEspecie}}</td>
+      <td style="margin-top: 3%;">{{index.idRaza}}</td>
+
+      <td style="margin-top: 3%;">
+
+        <button class="edit" mat-icon (click)="confirmar(index.idPaciente)" >
+          <abbr title="Opciones">
+                 Eliminar
+          </abbr>
+      </button>
+
+      </td>
+      <td style="margin-top: 3%;">
+
+        <button class="edit" mat-icon (click)="editar(index)">
+          <abbr title="Opciones">
+                 Editar
+          </abbr>
+      </button>
+
+      </td>
+
+  </tr>
+</tbody></table>
+
+</div>
+
+</body>
+
+</html>
+
+
+

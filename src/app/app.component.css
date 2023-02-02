@@ -1,0 +1,33 @@
+button{
+  border:none;
+  color: rgb(178, 178, 224);
+  background-color: #f6f5f5;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight:bold  ;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+margin-left:7% ;
+}
+button:hover
+{
+  background-color: rgb(178, 178, 224);
+  color:#f6f5f5; ;
+}
+a{
+  text-decoration: none;
+}
+.container{
+  border: solid 1px;
+  border-color: black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+ padding: 12px;
+
+}
+
